@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+
+  <!-- Custom JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
+  <script>
+    $(document).ready(function () {
+      var owl = $('.owl-carousel');
+      owl.owlCarousel({
+        loop: true,
+        dots: true,
+        items: 2,
+        margin: 25,
+        autoplay: false,
+        nav: true,
+        navText: ["<img class='rotate-180' src='/ASSETS/IMG/arrow-dx-2.png'>","<img class='' src='/ASSETS/IMG/arrow-dx-2.png'>"],
+        dotsContainer: '#custom-owl-dots',
+        onInitialize: function(event) {
+          // var idx = event.item.index + 1;
+          // console.log("Init: el", event);
+          // console.log("Init: index", event.item.index);
+          // $('.owl-item').eq(idx).addClass('big');
+          // var el = $(event);
+          // console.log(el);
+        },
+        onChanged: (event) => {
+          var idx = event.item.index + 1;
+          $('.owl-item.big').removeClass('big');
+          $('.owl-item').eq(idx).addClass('big');
+          // console.log(event.item.index);
+        }
+      });
+
+      // owl.on('initialized.owl.carousel', function(event) {
+      //   console.log(event.item.index);
+      // })
+
+      // owl.on('changed.owl.carousel', function(event) {
+      //   console.log(event.item.index);
+      // })
+    });
+  </script>
+
+  <title>FURNIRO</title>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+            montserrat: ['Montserrat', 'sans-serif'],
+          },
+          height: {
+            card: "582px"
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities { 
+      .bg-one {
+        background-image: url('ASSETS/IMG/bg_1.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .navdotted:hover > .navdotted-border {
+        @apply border-yellow-600 transition-all duration-500;
+      }
+      .navdotted:hover > .navdotted-border > .navdotted-bg {
+        @apply bg-yellow-600 transition-all duration-500;
+      }
+      .owl-stage {
+        @apply flex;
+      }
+      /* .owl-item.active:first-child .item {
+        height: 582px;
+      } */
+      .owl-item.big .item {
+        height: 486px;
+      }
+      .owl-stage-outer {
+        @apply overflow-hidden;
+      }
+      .owl-nav {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 40%;
+        width: 100%;
+        color: #FFF;
+        padding: 0 25px;
+      }
+      .owl-dot {
+        @apply border-[#FCF8F3] border w-8 h-8 flex items-center justify-center rounded-full;
+      }
+      .owl-dot span {
+        @apply bg-[#B88E2F] flex items-center justify-center w-4 h-4 rounded-full;
+      }
+      .owl-dot.active {
+        @apply border-[#B88E2F] border w-8 h-8 flex items-center justify-center;
+      }
+      .owl-dot.active span {
+        @apply bg-[#B88E2F] flex items-center justify-center w-4 h-4 rounded-full;
+      }
+      .owl-theme .owl-nav [class*='owl-'] {
+        @apply m-0 p-0 bg-white/90 rounded-full w-12 h-12 flex items-center justify-center shadow-xl;
+      }
+      .owl-theme .owl-nav [class*='owl-']:hover {
+        @apply m-0 p-0 bg-white rounded-full w-12 h-12 flex items-center justify-center;
+      }
+    }
+  </style>
+</head>
+
+<body class="font-poppins text-xl">
+  <!--NAV-->
+  <div class="container mx-auto max-w-7xl text-lg">
+    <div class="grid grid-cols-12 gap-5 h-28 items-center">
+      <div class="col-span-4">
+        <a class="flex"><img src="ASSETS/IMG/Meubel House_Logos-05.svg" alt="">
+          <h1 class="font-montserrat font-bold text-4xl">Furniro</h1>
+        </a>
+      </div>
+      <div class="col-span-4">
+        <ul class="flex justify-center">
+          <li><a class="hover:text-yellow-600 px-8 py-4 transition-all" href="#">Home</a></li>
+          <li><a class="hover:text-yellow-600 px-8 py-4 transition-all" href="#">Shop</a></li>
+          <li><a class="hover:text-yellow-600 px-8 py-4 transition-all" href="#">About</a></li>
+          <li><a class="hover:text-yellow-600 px-8 py-4 transition-all" href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="flex justify-end col-span-4">
+        <ul class="space-x-8 flex justify-center">
+          <li><a class="hover:opacity-60 px-8 py-4 transition-all" href=""><img src="ASSETS/IMG/Icon_1.svg" alt=""></a>
+          </li>
+          <li><a class="hover:opacity-60 px-8 py-4 transition-all" href=""><img src="ASSETS/IMG/Icon_2.svg" alt=""></a>
+          </li>
+          <li><a class="hover:opacity-60 px-8 py-4 transition-all" href=""><img src="ASSETS/IMG/Icon_3.svg" alt=""></a>
+          </li>
+          <li><a class="hover:opacity-60 px-8 py-4 transition-all" href=""><img src="ASSETS/IMG/Icon_4.svg" alt=""></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!--PRIMA SECTION-->
+  <div class="bg-one">
+    <div class=" container mx-auto max-w-6xl h-screen py-36 flex justify-end">
+      <div class="bg-amber-100 w-1/2 px-10 py-16 h-96 rounded-xl">
+        <p class="font-semibold py-2">New Arrival</p>
+        <h2 class="font-bold text-5xl text-yellow-600">Discover Our</h2>
+        <h2 class="font-bold text-5xl text-yellow-600">New Collection</h2>
+        <p class="text-lg font-medium py-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
+          luctus nec ullamcorper mattis.</p>
+        <div class="py-4"><a class="bg-yellow-600 px-8 py-3 font-bold text-white text-lg hover:text-yellow-600 hover:bg-white" href="shop.html">BUY
+            Now</a></div>
+      </div>
+    </div>
+  </div>
+  <!--SECONDA SECTION-->
+  <div class="container mx-auto max-w-6xl py-16 flex">
+    <div class="flex flex-col items-center mb-20">
+      <div class="pb-16 text-center">
+        <h2 class="font-bold text-3xl">Browse The Range</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="grid grid-cols-3 gap-5 py-4">
+        <div class="text-center">
+          <div><img class="rounded-l hover:shadow-xl transition-all" src="ASSETS/IMG/PH_sec_2_1.png" alt=""></div>
+          <h3 class="font-bold py-8">Dining</h3>
+        </div>
+        <div class="text-center">
+          <div><img class="rounded-l hover:shadow-xl transition-all" src="ASSETS/IMG/PH_sec_2_2.png" alt=""></div>
+          <h3 class="font-bold py-8">Living</h3>
+        </div>
+        <div class="text-center">
+          <div><img class="rounded-l hover:shadow-xl transition-all" src="ASSETS/IMG/PH_sec_2_3.png" alt=""></div>
+          <h3 class="font-bold py-8">Bedroom</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--TERZA SECTION-->
+  <div class="container mx-auto max-w-6xl flex">
+    <div class="flex flex-col items-center">
+      <div class="pb-16 text-center">
+        <h2 class="font-bold text-3xl">Our Products</h2>
+      </div>
+      <div class="grid grid-cols-4 gap-5 py-4 ">
+        <div class="relative">
+          <div class="bg-black/[.5] absolute h-full w-full z-50 opacity-0 hover:opacity-100 ">
+            <div class="flex flex-col h-full justify-center">
+              <div class="flex justify-center mb-2">
+                <a class="bg-white text-yellow-600 hover:bg-yellow-600 hover:text-white py-2 px-7 text-base rounded-md" href="">Add to cart</a>
+              </div>
+              <div class="flex justify-center space-x-4">
+                <a class="text-base text-white hover:text-yellow-600" href="">Share</a>
+                <a class="text-base text-white hover:text-yellow-600" href="">Compare</a>
+                <a class="text-base text-white hover:text-yellow-600" href="">Like</a>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-200">
+            <div class="flex justify-end">
+              <p class="bg-red-400 text-white text-base rounded-full absolute py-4 px-2 m-4">-30%</p>
+              <img src="ASSETS/IMG/PH_sec_3_1.png" alt="">
+            </div>
+            <div class="flex flex-col p-4">
+              <h4 class="text-2xl font-bold">Syltherine</h4>
+              <p class="text-base py-2 text-gray-400">Stylish cafe chair</p>
+              <div class="flex">
+                <h5 class="text-xl font-medium">Rp 2.500.000</h5>
+                <p class="text-base text-gray-300 line-through">Rp 3.500.000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="bg-black/[.5] absolute h-full w-full z-50 opacity-0 hover:opacity-100 ">
+            <div class="flex flex-col h-full justify-center">
+              <div class="flex justify-center mb-2">
+                <a class="bg-white text-yellow-600 hover:bg-yellow-600 hover:text-white py-2 px-7 text-base rounded-md" href="">Add to cart</a>
+              </div>
+              <div class="flex justify-center space-x-4">
+                <a class="text-base text-white hover:text-yellow-600" href="">Share</a>
+                <a class="text-base text-white hover:text-yellow-600" href="">Compare</a>
+                <a class="text-base text-white hover:text-yellow-600" href="">Like</a>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-200">
+            <div class="flex justify-end">
+              <p class="bg-red-400 text-white text-base rounded-full absolute py-4 px-2 m-4">-30%</p>
+              <img src="ASSETS/IMG/PH_sec_3_1.png" alt="">
+            </div>
+            <div class="flex flex-col p-4">
+              <h4 class="text-2xl font-bold">Syltherine</h4>
+              <p class="text-base py-2 text-gray-400">Stylish cafe chair</p>
+              <div class="flex">
+                <h5 class="text-xl font-medium">Rp 2.500.000</h5>
+                <p class="text-base text-gray-300 line-through">Rp 3.500.000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="bg-black/[.5] absolute h-full w-full z-50 opacity-0 hover:opacity-100 ">
+            <div class="flex flex-col h-full justify-center">
+              <div class="flex justify-center mb-2">
+                <a class="bg-white text-yellow-600 hover:bg-yellow-600 hover:text-white py-2 px-7 text-base rounded-md" href="">Add to cart</a>
+              </div>
+              <div class="flex justify-center space-x-4">
+                <a class="text-base text-white hover:text-yellow-600" href="">Share</a>
+                <a class="text-base text-white hover:text-yellow-600" href="">Compare</a>
+                <a class="text-base text-white hover:text-yellow-600" href="">Like</a>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-200">
+            <div class="flex justify-end">
+              <p class="bg-red-400 text-white text-base rounded-full absolute py-4 px-2 m-4">-30%</p>
+              <img src="ASSETS/IMG/PH_sec_3_1.png" alt="">
+            </div>
+            <div class="flex flex-col p-4">
+              <h4 class="text-2xl font-bold">Syltherine</h4>
+              <p class="text-base py-2 text-gray-400">Stylish cafe chair</p>
+              <div class="flex">
+                <h5 class="text-xl font-medium">Rp 2.500.000</h5>
+                <p class="text-base text-gray-300 line-through">Rp 3.500.000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="bg-black/[.5] absolute h-full w-full z-50 opacity-0 hover:opacity-100 ">
+            <div class="flex flex-col h-full justify-center">
+              <div class="flex justify-center mb-2">
+                <a class="bg-white text-yellow-600 hover:bg-yellow-600 hover:text-white py-2 px-7 text-base rounded-md" href="">Add to cart</a>
+              </div>
+              <div class="flex justify-center space-x-4">
+                <a class="text-base text-white hover:text-yellow-600" href="">Share</a>
+                <a class="text-base text-white hover:text-yellow-600" href="">Compare</a>
+                <a class="text-base text-white hover:text-yellow-600" href="">Like</a>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-200">
+            <div class="flex justify-end">
+              <p class="bg-red-400 text-white text-base rounded-full absolute py-4 px-2 m-4">-30%</p>
+              <img src="ASSETS/IMG/PH_sec_3_1.png" alt="">
+            </div>
+            <div class="flex flex-col p-4">
+              <h4 class="text-2xl font-bold">Syltherine</h4>
+              <p class="text-base py-2 text-gray-400">Stylish cafe chair</p>
+              <div class="flex">
+                <h5 class="text-xl font-medium">Rp 2.500.000</h5>
+                <p class="text-base text-gray-300 line-through">Rp 3.500.000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="bg-black/[.5] absolute h-full w-full z-50 opacity-0 hover:opacity-100 ">
+            <div class="flex flex-col h-full justify-center">
+              <div class="flex justify-center mb-2">
+                <a class="bg-white text-yellow-600 hover:bg-yellow-600 hover:text-white py-2 px-7 text-base rounded-md" href="">Add to cart</a>
+              </div>
+              <div class="flex justify-center space-x-4">
+                <a class="text-base text-white hover:text-yellow-600" href="">Share</a>
+                <a class="text-base text-white hover:text-yellow-600" href="">Compare</a>
+                <a class="text-base text-white hover:text-yellow-600" href="">Like</a>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-200">
+            <div class="flex justify-end">
+              <p class="bg-red-400 text-white text-base rounded-full absolute py-4 px-2 m-4">-30%</p>
+              <img src="ASSETS/IMG/PH_sec_3_1.png" alt="">
+            </div>
+            <div class="flex flex-col p-4">
+              <h4 class="text-2xl font-bold">Syltherine</h4>
+              <p class="text-base py-2 text-gray-400">Stylish cafe chair</p>
+              <div class="flex">
+                <h5 class="text-xl font-medium">Rp 2.500.000</h5>
+                <p class="text-base text-gray-300 line-through">Rp 3.500.000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="bg-black/[.5] absolute h-full w-full z-50 opacity-0 hover:opacity-100 ">
+            <div class="flex flex-col h-full justify-center">
+              <div class="flex justify-center mb-2">
+                <a class="bg-white text-yellow-600 hover:bg-yellow-600 hover:text-white py-2 px-7 text-base rounded-md" href="">Add to cart</a>
+              </div>
+              <div class="flex justify-center space-x-4">
+                <a class="text-base text-white hover:text-yellow-600" href="">Share</a>
+                <a class="text-base text-white hover:text-yellow-600" href="">Compare</a>
+                <a class="text-base text-white hover:text-yellow-600" href="">Like</a>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-200">
+            <div class="flex justify-end">
+              <p class="bg-red-400 text-white text-base rounded-full absolute py-4 px-2 m-4">-30%</p>
+              <img src="ASSETS/IMG/PH_sec_3_1.png" alt="">
+            </div>
+            <div class="flex flex-col p-4">
+              <h4 class="text-2xl font-bold">Syltherine</h4>
+              <p class="text-base py-2 text-gray-400">Stylish cafe chair</p>
+              <div class="flex">
+                <h5 class="text-xl font-medium">Rp 2.500.000</h5>
+                <p class="text-base text-gray-300 line-through">Rp 3.500.000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="bg-black/[.5] absolute h-full w-full z-50 opacity-0 hover:opacity-100 ">
+            <div class="flex flex-col h-full justify-center">
+              <div class="flex justify-center mb-2">
+                <a class="bg-white text-yellow-600 hover:bg-yellow-600 hover:text-white py-2 px-7 text-base rounded-md" href="">Add to cart</a>
+              </div>
+              <div class="flex justify-center space-x-4">
+                <a class="text-base text-white hover:text-yellow-600" href="">Share</a>
+                <a class="text-base text-white hover:text-yellow-600" href="">Compare</a>
+                <a class="text-base text-white hover:text-yellow-600" href="">Like</a>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-200">
+            <div class="flex justify-end">
+              <p class="bg-red-400 text-white text-base rounded-full absolute py-4 px-2 m-4">-30%</p>
+              <img src="ASSETS/IMG/PH_sec_3_1.png" alt="">
+            </div>
+            <div class="flex flex-col p-4">
+              <h4 class="text-2xl font-bold">Syltherine</h4>
+              <p class="text-base py-2 text-gray-400">Stylish cafe chair</p>
+              <div class="flex">
+                <h5 class="text-xl font-medium">Rp 2.500.000</h5>
+                <p class="text-base text-gray-300 line-through">Rp 3.500.000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="bg-black/[.5] absolute h-full w-full z-50 opacity-0 hover:opacity-100 ">
+            <div class="flex flex-col h-full justify-center">
+              <div class="flex justify-center mb-2">
+                <a class="bg-white text-yellow-600 hover:bg-yellow-600 hover:text-white py-2 px-7 text-base rounded-md" href="">Add to cart</a>
+              </div>
+              <div class="flex justify-center space-x-4">
+                <a class="text-base text-white hover:text-yellow-600" href="">Share</a>
+                <a class="text-base text-white hover:text-yellow-600" href="">Compare</a>
+                <a class="text-base text-white hover:text-yellow-600" href="">Like</a>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-200">
+            <div class="flex justify-end">
+              <p class="bg-red-400 text-white text-base rounded-full absolute py-4 px-2 m-4">-30%</p>
+              <img src="ASSETS/IMG/PH_sec_3_1.png" alt="">
+            </div>
+            <div class="flex flex-col p-4">
+              <h4 class="text-2xl font-bold">Syltherine</h4>
+              <p class="text-base py-2 text-gray-400">Stylish cafe chair</p>
+              <div class="flex">
+                <h5 class="text-xl font-medium">Rp 2.500.000</h5>
+                <p class="text-base text-gray-300 line-through">Rp 3.500.000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center">
+        <a class="text-base bg-white text-yellow-600 border border-yellow-600 hover:bg-yellow-600 hover:text-white py-2 px-12 my-4" href="">Show More</a>
+      </div>
+    </div>
+  </div>
+  <!--QUARTA SECTION-->
+  <div class="bg-[#FCF8F3]">
+    <div class="container max-w-6xl mx-auto py-16 relative flex">
+      <!-- <div class="absolute z-50 flex items-center justify-end right-0 inset-y-1/2">
+        <a class="h-12 w-12 " href=""><img class="ml-5 h-12 w-12 bg-white scale-50" src="ASSETS/IMG/icon_arrow_2.svg" alt=""></a>
+     </div> -->
+      <div class="grid grid-cols-3 gap-4">
+        <div class="flex flex-col justify-center text-base">
+          <h3 class="font-bold text-4xl">50+ Beautiful rooms inspiration</h3>
+          <p class="py-2">Our designer already made a lot of beautiful prototipe of rooms that inspire you</p>
+          <a class="bg-yellow-600 w-fit px-12 py-4 text-white font-semibold my-4" href="">Explore More</a>
+        </div>
+        <div class="flex col-span-2 space-x-4 flex flex-col">
+          <div class="owl-carousel owl-theme w-full relative">
+            <div class="item w-full h-card relative flex flex-col">
+              <img class="relative h-full flex" src="https://picsum.photos/id/13/404/582" alt="">
+              <div class="absolute flex items-end left-5 bottom-5 z-auto">
+                <div class="bg-white/80 px-7 py-6 text-[#616161] text-lg">
+                  <p class="mb-2">01 - Bed Room</p>
+                  <p class="text-xl font-semibold">Inner Peace</p>
+                </div>
+                <a class="bg-[#B88E2F] flex items-center justify-center w-12 h-12" href="#">
+                  <img src="/ASSETS/IMG/arrow-dx.png" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="item w-full h-card relative flex flex-col">
+              <img class="relative h-full flex" src="https://picsum.photos/id/17/404/582" alt="">
+              <div class="absolute flex items-end left-5 bottom-5 z-auto">
+                <div class="bg-white/80 px-7 py-6 text-[#616161] text-lg">
+                  <p class="mb-2">02 - Bed Room</p>
+                  <p class="text-xl font-semibold">Inner Peace</p>
+                </div>
+                <a class="bg-[#B88E2F] flex items-center justify-center w-12 h-12" href="#">
+                  <img src="/ASSETS/IMG/arrow-dx.png" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="item w-full h-card relative flex flex-col">
+              <img class="relative h-full flex" src="https://picsum.photos/id/20/404/582" alt="">
+              <div class="absolute flex items-end left-5 bottom-5 z-auto">
+                <div class="bg-white/80 px-7 py-6 text-[#616161] text-lg">
+                  <p class="mb-2">03 - Bed Room</p>
+                  <p class="text-xl font-semibold">Inner Peace</p>
+                </div>
+                <a class="bg-[#B88E2F] flex items-center justify-center w-12 h-12" href="#">
+                  <img src="/ASSETS/IMG/arrow-dx.png" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="item w-full h-card relative flex flex-col">
+              <img class="relative h-full flex" src="https://picsum.photos/id/25/404/582" alt="">
+              <div class="absolute flex items-end left-5 bottom-5 z-auto">
+                <div class="bg-white/80 px-7 py-6 text-[#616161] text-lg">
+                  <p class="mb-2">04 - Bed Room</p>
+                  <p class="text-xl font-semibold">Inner Peace</p>
+                </div>
+                <a class="bg-[#B88E2F] flex items-center justify-center w-12 h-12" href="#">
+                  <img src="/ASSETS/IMG/arrow-dx.png" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+          <div id="custom-owl-dots" class="w-[32%] absolute bottom-[14%] right-0 flex items-center space-x-3"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!--QUINTA SECTION-->
+  <div class="w-full py-16 flex flex-col justify-center">
+    <div class="text-center">
+      <h3 class="text-2xl">Share your setup with</h3>
+      <h2 class="font-bold text-4xl">#FuniroFurniture</h2>
+    </div>
+    <img class="object-cover" src="ASSETS/IMG/BG_sec_5_1.png" alt="">
+  </div>
+  <!--FOOTER-->
+  <div class="border-t-2 border-gray-300">
+    <div class="container mx-auto max-w-6xl py-16">
+      <div class="grid grid-cols-3 gap-5 py-4">
+        <div class="flex flex-col">
+          <h2 class="font-montserrat font-bold text-2xl pb-12">Furniro.</h2>
+          <a class="hover:text-amber-600 text-base font-light text-gray-600" href="https://maps.app.goo.gl/J8F9jbswhkM2e2fS8">400 University Drive Suite 200 Coral <br>Gables,<br>FL
+            33134 USa</a>
+        </div>
+        <div class="flex grid grid-cols-2 gap-5">
+          <div class="flex flex-col">
+            <a class="text-base font-light text-gray-600 pb-12 hover:text-amber-600" href="">Links</a>
+            <a class="text-base font-medium pb-12 hover:text-amber-600" href="">Home</a>
+            <a class="text-base font-medium pb-12 hover:text-amber-600" href="">Shop</a>
+            <a class="text-base font-medium pb-12 hover:text-amber-600" href="">About</a>
+            <a class="text-base font-medium hover:text-amber-600" href="">Contact</a>
+          </div>
+          <div class="flex flex-col">
+            <a class="text-base font-light text-gray-600 pb-12 hover:text-amber-600" href="">Help</a>
+            <a class="text-base font-medium pb-12 hover:text-amber-600" href="">Payment Options</a>
+            <a class="text-base font-medium pb-12 hover:text-amber-600" href="">Returns</a>
+            <a class="text-base font-medium pb-12 hover:text-amber-600" href="">Privacy Policies</a>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <a class="text-base font-light text-gray-600 pb-12 hover:text-amber-600" href="">Newsletter</a>
+          <div><input class="border-b-2 border-gray-600 focus:outline-none" type="email" placeholder="Enter Your Email Address"> <a
+              class="ml-2 text-bold border-b-2 border-gray-600 hover:border-amber-600 hover:text-amber-600" href="">SUBSCRIBE</a></div>
+        </div>
+      </div>
+      <hr class="w-full border border-gray-300">
+      <p class="text-base font-medium py-4">2023 furino. All rights reverved</p>
+    </div>
+  </div>
+
+</body>
